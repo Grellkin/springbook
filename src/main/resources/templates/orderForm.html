@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco</title>
+    <link rel="stylesheet" th:href="@{/styles/st.css}">
+</head>
+    <body>
+
+        <table>
+            <tr>
+                <td><h1>Delivery and payment details!</h1></td>
+                <td><img th:src="@{/images/tacoSimbol.jpg}" height="50dp" width="50dp"></td>
+            </tr>
+        </table>
+
+
+        <form method="post" th:action="@{/orders}" th:object="${order}">
+
+            <a th:href="@{/design}">Add one more taco!</a>
+            <table>
+                <tr>
+                    <td colspan="2"><h3>Where to deliver your taco?</h3></td>
+                </tr><tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="name" th:value="${order.getName()}"></td>
+                </tr><tr>
+                    <td>Street address: </td>
+                    <td><input type="text" name="street" th:value="${order.getStreet()}"></td>
+                </tr><tr>
+                    <td>City: </td>
+                    <td><input type="text" name="city" th:value="${order.getCity()}"></td>
+                </tr><tr>
+                    <td>State: </td>
+                    <td><input type="text" name="state" th:value="${order.getState()}"></td>
+                </tr><tr>
+                    <td>Zip Code: </td>
+                    <td><input type="text" name="zip" th:value="${order.getZip()}"></td>
+                </tr><tr>
+                    <td colspan="2"><h3>Payment Details</h3></td>
+                </tr><tr>
+                    <td>Credit Card #: </td>
+                    <td><input type="text" name="ccNumber">
+                        <span class="validationError"
+                              th:if="${#fields.hasErrors('ccNumber')}"
+                              th:errors="*{ccNumber}">CC Number Error</span></td>
+                </tr><tr>
+                    <td>Expiration: </td>
+                    <td><input type="text" name="ccExpiration">
+                        <span class="validationError"
+                              th:if="${#fields.hasErrors('ccExpiration')}"
+                              th:errors="*{ccExpiration}">Expiration Error</span></td>
+                </tr><tr>
+                    <td>CVV: </td>
+                    <td><input type="text" name="ccCVV">
+                        <span class="validationError"
+                              th:if="${#fields.hasErrors('ccCVV')}"
+                              th:errors="*{ccCVV}">CVV Error</span></td>
+                </tr>
+            </table><br/>
+            <button type="submit">Complete order</button>
+            <button type="reset">Reset info</button>
+
+        </form>
+
+    </body>
+
+</html>
