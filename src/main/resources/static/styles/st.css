@@ -27,3 +27,40 @@ div.ingredient-group {
 span.validationError {
     color: red;
 }
+
+div.header {
+    padding: 5px;
+    text-align: right;
+    color: white;
+}
+
+div.sala {
+    align-content: center;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+
+img {
+    vertical-align: middle;
+}
+
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+span.sala {
+    vertical-align: central;
+    horiz-align: right;
+    line-height: normal;
+}
+
+table.home {
+    padding: 20px;
+    width: 500px;
+    align-content: center;
+    align-self: center;
+}

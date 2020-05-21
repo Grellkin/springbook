@@ -8,6 +8,12 @@
 </head>
     <body>
 
+    <div class="sala">
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+        <span><h1>Welcome to Taco Salamanca!</h1></span>
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+    </div>
+
         <table>
             <tr>
                 <td><h1>Delivery and payment details!</h1></td>
@@ -27,7 +33,7 @@
                     <td><input type="text" name="name" th:value="${order.getName()}"></td>
                 </tr><tr>
                     <td>Street address: </td>
-                    <td><input type="text" name="street" th:value="${order.getStreet()}"></td>
+                    <td><input type="text" name="street" th:value="${user.getStreet()}"></td>
                 </tr><tr>
                     <td>City: </td>
                     <td><input type="text" name="city" th:value="${order.getCity()}"></td>
@@ -59,6 +65,7 @@
                               th:errors="*{ccCVV}">CVV Error</span></td>
                 </tr>
             </table><br/>
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
             <button type="submit">Complete order</button>
             <button type="reset">Reset info</button>
 

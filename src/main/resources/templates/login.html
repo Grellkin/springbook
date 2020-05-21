@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco</title>
+    <link rel="stylesheet" th:href="@{/styles/st.css}">
+</head>
+    <body>
+
+    <div class="sala">
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+        <span><a th:href="@{/}"> <h1>Welcome to Taco Salamanca!</h1> </a></span>
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+    </div>
+    <br/>
+
+        <form method="POST" th:action="@{/login}" id="login">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username"/><br/><br/>
+            <label for="password">Password:&nbsp</label>
+            <input type="password" name="password" id="password"/><br/><br/>
+
+            <input type="submit" value="Login"/>
+        </form><br/>
+
+    <a th:href="@{/register}">Register!</a>
+    </body>
+</html>

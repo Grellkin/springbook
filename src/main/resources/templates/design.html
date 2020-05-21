@@ -7,6 +7,11 @@
     <link rel="stylesheet" th:href="@{/styles/st.css}"/>
 </head>
     <body>
+    <div class="sala">
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+        <span><a th:href="@{/}"> <h1>Welcome to Taco Salamanca!</h1> </a></span>
+        <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+    </div>
     <table>
         <td><h1>Design your Taco!</h1></td>
         <td>&nbsp;<img th:src="@{/images/tacoSimbol.jpg}" width="50dp" height="50dp"/></td>
@@ -59,7 +64,7 @@
 
             <h3>Name your taco creation:</h3>
             <input type="text" th:field="*{name}"/><br/><br/>
-
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
         <button type="submit">Order this Taco</button>
         <button type="reset">Reset your choices</button>
     </form>

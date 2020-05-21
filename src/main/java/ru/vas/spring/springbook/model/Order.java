@@ -61,4 +61,7 @@ public class Order {
     void placedAt() {
         placedAt = LocalDateTime.now();
     }
+
+    @ManyToOne
+    private User user;
 }

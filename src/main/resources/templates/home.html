@@ -4,9 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Taco</title>
+    <link rel="stylesheet" th:href="@{/styles/st.css}"/>
 </head>
     <body>
-        <h1>Welcome to Taco Salamancka!</h1>
-        <img th:src="@{/images/tacoSimbol.jpg}" th:width="100dp" th:height="100dp"/>
+        <div class="sala">
+            <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+               <span><h1>Welcome to Taco Salamanca!</h1></span>
+            <span><img th:src="@{/images/tuco.png}" th:width="100dp" th:height="100dp"/></span>
+        </div>
+
+        <table class="home">
+            <tr>
+                <td><a th:href="@{/design}">Design your Taco, bitch!</a></td>
+                <td><a th:href="@{/login}">Login</a></td>
+                <td><form method="post" th:action="@{/logout}">
+                    <input type="submit" value="Logout"/>
+                </form></td>
+            </tr>
+        </table>
+
     </body>
 </html>
